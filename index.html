@@ -1,0 +1,211 @@
+<!DOCTYPE html><html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    <title>Belo Horizonte - Seu Portal de Jornalismo</title>
+    
+    </head>
+    <body background="img2.jpg">
+        <style>
+            body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #644c4c;
+    }
+    header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    nav {
+        background-color: #444;
+        padding: 15px;
+        text-align: center;
+    }
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+    }
+    .news-item {
+        background-color: rgb(253, 253, 253);
+        margin: 15px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    .news-item img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .news-item h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+    .news-item p {
+        font-size: 1em;
+        color: #555;
+    }
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 4px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .load-more {
+        background-color: #444;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+        font-size: 1.2em;
+    }
+    .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+        }
+        #clock {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 100px;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+    
+        </style>
+    </head>
+    <body>
+    
+        <header>
+            <h1>Geralmente Minas</h1>
+            <p>SPORTE EM TEMPO REAL</p>
+            <div id="clock"></div>
+        </header>
+    
+        <nav>
+            <a href="#">Início</a>
+            <a href="C:\Users\User\Desktop\pteste\1\index.html">Campeonato Mineiro</a>
+            <a href="C:\Users\User\Desktop\pteste\2\index.html">Copa do Brasil</a>
+            <a href="C:\Users\User\Desktop\pteste\3\index.html">Libertadores</a>
+            <a href="C:\Users\User\Desktop\pteste\4\index.html">Brasileirão</a>
+            <a href="C:\Users\User\Desktop\pteste\5\index.html">Liga dos Campeões</a>
+        </nav>
+    
+    
+        <section class="news-container" id="news-container">
+            <div class="news-item">
+                <img src="https://via.placeholder.com/300x200" alt="Notícia 1">
+                <h2>Manchete 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu non purus consequat fermentum.</p>
+            </div>
+            <div class="news-item">
+                <img src="https://via.placeholder.com/300x200" alt="Notícia 2">
+                <h2>Manchete 2</h2>
+                <p>Curabitur sed libero nec justo malesuada facilisis. Integer quis odio euismod, placerat libero et, faucibus est.</p>
+            </div>
+            <div class="news-item">
+                <img src="https://via.placeholder.com/300x200" alt="Notícia 3">
+                <h2>Manchete 3</h2>
+                <p>Donec accumsan, libero ac viverra ultricies, augue nulla pulvinar arcu, ac suscipit elit erat non ligula.</p>
+            </div>
+        </section>
+    
+        <button class="load-more" onclick="loadMoreNews()">Carregar mais notícias</button>
+    
+        <footer>
+            <p>© 2024 Notícias Agora - Todos os direitos reservados</p>
+        </footer>
+    
+        <script>
+            function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Adiciona zero à esquerda, se necessário
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = currentTime;
+        }
+
+        // Atualiza o relógio a cada segundo
+        setInterval(updateClock, 1000);
+
+        // Inicializa o relógio ao carregar a página
+        updateClock();
+
+            // Simula o carregamento de mais notícias
+            function loadMoreNews() {
+                const newsContainer = document.getElementById('news-container');
+    
+                const moreNews = [
+                    {
+                        title: "Manchete 4",
+                        description: "Aliquam interdum neque a mauris venenatis, a vulputate eros mollis.",
+                        img: "https://via.placeholder.com/300x200"
+                    },
+                    {
+                        title: "Manchete 5",
+                        description: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.",
+                        img: "https://via.placeholder.com/300x200"
+                    },
+                    {
+                        title: "Manchete 6",
+                        description: "Proin sollicitudin arcu at libero vulputate, et aliquet purus fermentum.",
+                        img: "https://via.placeholder.com/300x200"
+                    }
+                ];
+    
+                moreNews.forEach(news => {
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
+    
+                    newsItem.innerHTML = `
+                        <img src="${news.img}" alt="${news.title}">
+                        <h2>${news.title}</h2>
+                        <p>${news.description}</p>
+                    `;
+    
+                    newsContainer.appendChild(newsItem);
+                });
+            }
+        </script>
+    
+    </body>
+    </body>
+</head>
+
+</html>
